@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace DDX.Clock.Views
 {
-    public class WallClockView : MonoBehaviour
+    public class WallClockView : MonoBehaviour, ITimeView
     {
         [SerializeField] private Image _hoursHandImage;
         [SerializeField] private Image _minusteHandImage;
