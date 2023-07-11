@@ -25,9 +25,14 @@ namespace DDX.Clock.Views
             var minutesHandRotZ = minutes / 60 * 360;
             var secondsHandRotZ = seconds / 60 * 360;
 
-            _hoursHandImage.rectTransform.rotation = Quaternion.Euler(0, 0, -hoursHandRotZ);
-            _minusteHandImage.rectTransform.rotation = Quaternion.Euler(0, 0, -minutesHandRotZ);
-            _secondsHandImage.rectTransform.rotation = Quaternion.Euler(0, 0, -secondsHandRotZ);
+            if (_hoursHandImage != null)
+                _hoursHandImage.rectTransform.rotation = Quaternion.Euler(0, 0, -hoursHandRotZ);
+
+            if (_minusteHandImage != null)
+                _minusteHandImage.rectTransform.rotation = Quaternion.Euler(0, 0, -minutesHandRotZ);
+
+            if (_secondsHandImage != null)
+                _secondsHandImage.rectTransform.rotation = Quaternion.Euler(0, 0, -secondsHandRotZ);
         }
     }
 }
