@@ -37,6 +37,7 @@ namespace DDX.Clock.Alarm.Inputs
             if (!_isActive)
             {
                 _isActive = true;
+                _alarmData.IsRunned = false;
                 foreach (var alarm in _alarmViews)
                     alarm.Show();
                 _buttonText.text = "Save alarm";
@@ -46,6 +47,7 @@ namespace DDX.Clock.Alarm.Inputs
             else
             {
                 _isActive = false;
+                _alarmData.IsRunned = true;
                 foreach (var alarm in _alarmViews)
                     alarm.Hide();
                 _buttonText.text = "Set alarm";
@@ -53,7 +55,7 @@ namespace DDX.Clock.Alarm.Inputs
             }
         }
 
-        private void WhenAlarmDataChanged(object sender, TimeSpan? e)
+        private void WhenAlarmDataChanged(object sender, TimeSpan e)
         {
             _button.interactable = _alarmData.WhenAlarm != null;
         }

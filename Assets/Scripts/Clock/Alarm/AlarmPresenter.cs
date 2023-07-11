@@ -46,14 +46,13 @@ namespace DDX.Clock.Alarm
             _isInitialized = true;
         }
 
-        private void WhenAlarmChanged(object sender, TimeSpan? e)
+        private void WhenAlarmChanged(object sender, TimeSpan e)
         {
-            if (e.HasValue)
-                foreach (var input in _alarmInputs)
-                    input.SetAlarmValue(_alarmData.WhenAlarm);
+            foreach (var input in _alarmInputs)
+                input.SetAlarmValue(_alarmData.WhenAlarm);
         }
 
-        private void Input_AlarmValueChanged(object sender, TimeSpan? e)
+        private void Input_AlarmValueChanged(object sender, TimeSpan e)
         {
             _alarmData.WhenAlarm = e;
         }

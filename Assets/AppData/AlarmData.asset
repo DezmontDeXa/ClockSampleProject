@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9705a800416fef4ea76b50f4b26306b, type: 3}
   m_Name: AlarmData
   m_EditorClassIdentifier: 
+  _alarmSound: {fileID: 8300000, guid: 58becbc2c02844f4ea535530fae77965, type: 3}

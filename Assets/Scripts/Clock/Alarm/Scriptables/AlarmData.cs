@@ -6,23 +6,26 @@ namespace DDX.Clock.Alarm
     [CreateAssetMenu(fileName = "AlarmData")]
     public class AlarmData : ScriptableObject
     {
-        private TimeSpan? _whenAlarm;
+        [SerializeField] private AudioClip _alarmSound;
 
-        public TimeSpan? WhenAlarm
+        private TimeSpan _whenAlarm;
+
+        public TimeSpan WhenAlarm
         {
             get => _whenAlarm;
             set
             {
                 _whenAlarm = value;
-                if(value!=null)
-                    Debug.Log(value);
-
                 WhenAlarmChanged?.Invoke(this, _whenAlarm);
             }
         }
 
+        public AudioClip AlarmSound => _alarmSound;
 
-        public event EventHandler<TimeSpan?> WhenAlarmChanged;
+        public bool IsRunned { get; set; }
+
+
+        public event EventHandler<TimeSpan> WhenAlarmChanged;
     }
 
 }

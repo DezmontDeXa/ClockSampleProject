@@ -8,7 +8,7 @@ namespace DDX.Clock.Alarm.Inputs
     {
         [SerializeField] private TMP_InputField _inputField;
 
-        public event EventHandler<TimeSpan?> AlarmValueChanged;
+        public event EventHandler<TimeSpan> AlarmValueChanged;
 
         private void Awake()
         {
@@ -16,17 +16,17 @@ namespace DDX.Clock.Alarm.Inputs
             _inputField.onValidateInput = ValidateInput;
         }
 
-        public void SetAlarmValue(TimeSpan? time)
+        public void SetAlarmValue(TimeSpan time)
         {
             if (enabled)
             {
-                if (time == null) 
+                if (time == TimeSpan.Zero) 
                     return;
 
-                if (time.Value.Hours > 9)
-                    _inputField.text = time?.ToString("hh\\:mm");
+                if (time.Hours > 9)
+                    _inputField.text = time.ToString("hh\\:mm");
                 else
-                    _inputField.text = time?.ToString("h\\:mm");
+                    _inputField.text = time.ToString("h\\:mm");
             }
         }
 
@@ -59,7 +59,11 @@ namespace DDX.Clock.Alarm.Inputs
                         _inputField.text = value;
                     }
                 }
-                else return;
+                else
+                {
+                    AlarmValueChanged?.Invoke(this, TimeSpan.Zero);
+                    return;
+                }
             }
 
             value = string.Join(":", groups);
@@ -74,7 +78,7 @@ namespace DDX.Clock.Alarm.Inputs
                 }
             }
 
-            AlarmValueChanged?.Invoke(this, null);
+            AlarmValueChanged?.Invoke(this, TimeSpan.Zero);
         }
 
         private char ValidateInput(string text, int charIndex, char addedChar)
