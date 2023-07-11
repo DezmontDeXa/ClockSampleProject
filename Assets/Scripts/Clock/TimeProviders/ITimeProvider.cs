@@ -1,6 +1,10 @@
+using Cysharp.Threading.Tasks;
 using System;
 
-public interface ITimeProvider
+namespace DDX.Clock.TimeProviders
 {
-    TimeSpan GetTime();
+    public interface ITimeProvider
+    {
+        UniTask<TimeSpan> GetTimeAsync();
+    }
 }
