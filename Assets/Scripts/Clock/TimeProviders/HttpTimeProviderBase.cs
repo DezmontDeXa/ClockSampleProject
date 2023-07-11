@@ -10,7 +10,7 @@ namespace DDX.Clock.TimeProviders
 
         public async UniTask<TimeSpan> GetTimeAsync()
         {
-            var text = (await UnityWebRequest.Get("https://...").SendWebRequest()).downloadHandler.text;
+            var text = (await UnityWebRequest.Get(Uri).SendWebRequest()).downloadHandler.text;
             var response = ParseTextResponse(text);
             var dt = GetDateTimeFromResponse(response);
             return new TimeSpan(dt.Hour, dt.Minute, dt.Second);
