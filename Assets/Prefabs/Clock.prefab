@@ -354,6 +354,7 @@ GameObject:
   - component: {fileID: 760675429168500348}
   - component: {fileID: 331187113833435559}
   - component: {fileID: 5464590101528011615}
+  - component: {fileID: 274383616885694096}
   m_Layer: 5
   m_Name: Clock
   m_TagString: Untagged
@@ -376,7 +377,7 @@ RectTransform:
   - {fileID: 8013905521857578366}
   - {fileID: 6707133406283256145}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -406,6 +407,21 @@ MonoBehaviour:
   _hoursHandImage: {fileID: 3601624112947281292}
   _minusteHandImage: {fileID: 526005323648064880}
   _secondsHandImage: {fileID: 1177111187475069597}
-  _hours: 0
-  _minutes: 0
-  _seconds: 0
+--- !u!114 &274383616885694096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7895705220525349212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0166d8ff8d905b048b2448179e1f5d11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _components:
+  - {fileID: 5464590101528011615}
+  _identifier: 
+  _useSceneContext: 1
+  _context: {fileID: 0}
+  _bindType: 2
