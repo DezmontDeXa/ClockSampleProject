@@ -222,6 +222,7 @@ GameObject:
   - component: {fileID: 2975877653868440277}
   - component: {fileID: 9095393400412981276}
   - component: {fileID: 7028459149073002616}
+  - component: {fileID: 5518376922395457524}
   m_Layer: 5
   m_Name: Digital Clock
   m_TagString: Untagged
@@ -282,3 +283,16 @@ MonoBehaviour:
   _useSceneContext: 1
   _context: {fileID: 0}
   _bindType: 2
+--- !u!114 &5518376922395457524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8319771616969495844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 477707e2e6692394981184d50e6635b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Content: {fileID: 0}
